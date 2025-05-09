@@ -103,7 +103,7 @@ resource "azurerm_key_vault_access_policy" "mykeyvault_a_p" {
 #
 resource "azurerm_key_vault_secret" "myapikey" {
   name         = "API-KEY"
-  value        = "aaaaaAAAAAbbbbbbBBBBBcccccCCCCCdddddDDDDD"
+  value        = var.api_key
   key_vault_id = azurerm_key_vault.mykeyvault.id
   depends_on = [
     azurerm_linux_function_app.ms1linuxfuntionapp
