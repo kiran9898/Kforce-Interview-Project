@@ -1,0 +1,14 @@
+StorageBlobLogs
+| where OperationName in ("PutBlob", "GetBlob", "DeleteBlob", "AppendBlob", "PutBlock", "PutBlockList")
+| project
+    TimeGenerated,
+    RequesterUpn,
+    Category,
+    OperationName,
+    ObjectKey,
+    ClientRequestId,
+    RequesterObjectId,
+    AuthorizationDetails,
+    StatusCode,
+    AuthenticationType,
+    CallerIpAddress
